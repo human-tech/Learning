@@ -1,3 +1,3 @@
 A python file that makes use of the command line to take in a dna sequence (txt file) as input, matches it against the database (csv database), and outputs the result.
-Input Format:
+Usage example:
 python dna.py databases/small.csv sequences/1.txt
