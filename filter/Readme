@@ -1,0 +1,5 @@
+C Programme that applies filters to bmp images. 
+Filters:
+Greyscale (g), Reflection (r), Blur (b), EdgeDetection (e)
+Usage example:
+./filter -g infile.bmp outfile.bmp
