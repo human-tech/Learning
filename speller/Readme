@@ -1,0 +1,3 @@
+A dummy spell checker written in C.
+Usage example:
+./speller texts/lalaland.txt
