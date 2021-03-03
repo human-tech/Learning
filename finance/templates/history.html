@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <tr>
+            <th>Asset</th>
+            <th>Nature</th>
+            <th>Quantity</th>
+            <th>Value</th>
+            <th>Amount</th>
+        </tr>
+        {% for stat in history %}
+            <tr>
+                <td>{{ stat.stock }}</td>
+                {% if stat.number > 0 %}
+                    <td>Bought</td>
+                {% else %}
+                    <td>Sold</td>
+                {% endif %}
+                <td>{{ stat.number | abs}}</td>
+                <td>{{ usd(stat.value) }}</td>
+                <td>{{ usd(stat.amount) }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

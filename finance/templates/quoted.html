@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    {% if stocks is not none %}
+        {{ stocks.name }}'s shares are trading at {{ usd(stocks.price) }}
+    {% else %}
+        No such stock found
+    {% endif %}
+{% endblock %}

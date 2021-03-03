@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <tr>
+            <th>Asset</th>
+            <th>Quantity</th>
+            <th>Value</th>
+            <th>Amount</th>
+        </tr>
+        <tr>
+            <td>Cash</td>
+            <td>-</td>
+            <td>-</td>
+            <td>{{ usd(cash) }}</td>
+        </tr>
+        {% for stat in stats %}
+            {% if stat.number > 0 %}
+                <tr>
+                    <td>{{ stat.stock }}</td>
+                    <td>{{ stat.number }}</td>
+                    <td>{{ usd(stat.value) }}</td>
+                    <td>{{ usd(stat.amount) }}</td>
+                </tr>
+            {% else %}
+                {% continue %}
+            {% endif %}
+        {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><b>{{ usd(total) }}</b></td>
+        </tr>
+    </table>
+{% endblock %}
